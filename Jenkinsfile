@@ -20,7 +20,13 @@ pipeline {
                 sh 'ls'
                 sh 'docker --version'
                 sh 'docker build -t myjenkimg .'
-                sh 'docker run --name myjenkcont1 -itd -p 5000:5000 myjenkimg'
+                sh 'docker run --name myjenkcont2 -itd -p 5000:5000 myjenkimg'
+            }
+        }
+
+        stage('destroy'){
+            steps{
+                sh 'docker stop myjenkcont2'
             }
         }
     }
