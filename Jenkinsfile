@@ -3,16 +3,16 @@ pipeline {
 
     stages {
         stage('Build'){
-        steps{
+         steps{
             echo 'building phase'
-        }
+         }
         }
 
         stage('Deploy'){
-        steps{
+         steps{
             git branch: 'main' , url: 'https://github.com/vipulkalebag/pythonrepos.git'
             echo 'Deploy phase'
-        }
+         }
         }
 
         stage('to see project'){
